@@ -6,3 +6,4 @@
 - [ ] Add .aliases file.
 - [ ] Add .functions file.
 - [ ] Provide installation utility (it should perform both install and uninstall).
+- [ ] Add wiki.
