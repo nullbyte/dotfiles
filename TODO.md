@@ -1,7 +1,7 @@
 # TODO List
 
 - [ ] Add vim configuration files.
-  - [ ] Add vim colour scheme.
+  - [x] Add vim colour scheme.
   - [ ] Add vim snippets.
 - [ ] Add zsh configuration files.
 - [ ] Add zsh theme.
