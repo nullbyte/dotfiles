@@ -1,0 +1,25 @@
+extends css
+
+snippet import "Import." b
+@import '${1}';
+endsnippet
+
+snippet mixin "Mixin." b
+@mixin ${1:name}(${2}) {
+	${3}
+}
+endsnippet
+
+snippet include "Include." b
+@include ${1:mixin}(${2});
+endsnippet
+
+snippet extend "Extend." b
+@extend ${1};
+endsnippet
+
+snippet function "Function." b
+@function ${1:name}(${2:args}) {
+	${3}
+}
+endsnippet

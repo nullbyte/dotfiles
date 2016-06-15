@@ -1,0 +1,296 @@
+extends html
+
+snippet <? "Opening php tag with new line." w
+<?php
+
+${1}
+endsnippet
+
+snippet <?e "An inline echo tag." w
+<?php echo ${0} ?>
+endsnippet
+
+snippet ? "An inline php tag." w
+<?php ${0} ?>
+endsnippet
+
+snippet ?if "An if block." w
+<?php if ($${1:var}): ?>
+	${0}
+<?php endif ?>
+endsnippet
+
+snippet	class "A class." b
+class ${1:`!p snip.rv = snip.basename or "ClassName"`}
+{
+	${0}
+}
+endsnippet
+
+snippet interface "An interface." b
+interface ${1:`!p snip.rv = snip.basename or "InterfaceName"`}
+{
+	${0}
+}
+endsnippet
+
+snippet t. "$this->"
+$this->
+endsnippet
+
+snippet function "A function." w
+function ${1}(${3})
+{
+	${0}
+}
+endsnippet
+
+snippet =?: "A ternary operation with assignment." b
+$${1:foo} = ${2:true} ? ${3:a} : ${0};
+endsnippet
+
+snippet ?: "A ternary operation without assignment."
+${1:true} ? ${2:a} : ${0}
+endsnippet
+
+snippet COOKIE "$_COOKIE global." w
+$_COOKIE['${1:variable}']
+endsnippet
+
+snippet GET "$_GET global." w
+$_GET['${1:variable}']
+endsnippet
+
+snippet POST "$_POST global." w
+$_POST['${1:variable}']
+endsnippet
+
+snippet REQUEST "$_REQUEST global." w
+$_REQUEST['${1:variable}']
+endsnippet
+
+snippet SERVER "$_SERVER global." w
+$_SERVER['${1:variable}']
+endsnippet
+
+snippet SESSION "$_SESSION global." w
+$_SESSION['${1:variable}']
+endsnippet
+
+snippet require "Require statement." b
+require '${1:file}';
+endsnippet
+
+snippet requireo "Require once statement." b
+require_once '${1:file}';
+endsnippet
+
+snippet /* "Comment block." b
+/**
+* ${0}
+*/
+endsnippet
+
+snippet define "A define statement." b
+define('${1}'${2});
+endsnippet
+
+snippet while "A while loop." b
+while (${1:/* condition */}) {
+	${2}
+}
+endsnippet
+
+snippet do "A do loop." b
+do {
+	${0}
+} while (${1:/* condition */});
+endsnippet
+
+snippet if "An if statement." b
+if (${1:/* condition */}) {
+	${0}
+}
+endsnippet
+
+snippet ifn "An if not statement." b
+if (!${1:/* condition */}) {
+	${2}
+}
+endsnippet
+
+snippet ifblock "An if block." b
+<?php if (${1:/* condition */}): ?>
+	${0}
+<?php endif; ?>
+endsnippet
+
+snippet ife "An if else statement." b
+if (${1:/* condition */}) {
+	${2}
+} else {
+	${3}
+}
+${0}
+endsnippet
+
+snippet ifeblock "An if else statement block." b
+<?php if (${1:/* condition */}): ?>
+	${2:<!-- html... -->}
+<?php else: ?>
+	${3:<!-- html... -->}
+<?php endif; ?>
+${0}
+endsnippet
+
+snippet else "An else statement." w
+else {
+	${0}
+}
+endsnippet
+
+snippet elseif "An elseif statement." w
+elseif (${1:/* condition */}) {
+	${0}
+}
+endsnippet
+
+snippet switch "A switch loop." b
+switch ($${1:variable}) {
+	case '${2:value}':
+		${3}
+		break;
+	${0}
+	default:
+		${4}
+		break;
+}
+endsnippet
+
+snippet case "A case statement." b
+case '${1:value}':
+	${2}
+	break;
+endsnippet
+
+snippet for "A for loop." b
+for ($${2:i} = 0; $$2 < ${1:count}; $$2${3:++}) {
+	${0}
+}
+endsnippet
+
+snippet foreach "A foreach loop." b
+foreach ($${1:variable} as $${2:value}) {
+	${0}
+}
+endsnippet
+
+snippet foreachblock "A foreach loop block." w
+<?php foreach ($${1:variable} as $${2:value}): ?>
+	${0:<!-- html... -->}
+<?php endforeach; ?>
+endsnippet
+
+snippet foreachk "A foreach loop with key => value pair." b
+foreach ($${1:variable} as $${2:key} => $${3:value}) {
+	${0}
+}
+endsnippet
+
+snippet foreachkblock "A foreach loop block with key => value pair." w
+<?php foreach ($${1:variable} as $${2:key} => $${3:value}): ?>
+	${0:<!-- html... -->}
+<?php endforeach; ?>
+endsnippet
+
+snippet try "A try catch statement." b
+try {
+	${1}
+} catch (${2:Exception} $e) {
+	$3
+}
+endsnippet
+
+snippet predump "A var_dump() inside <pre> tags." w
+	echo '<pre>'; var_dump(${0}); echo '</pre>';
+endsnippet
+
+snippet predumpd "A var_dump() inside <pre> tags with die()." w
+	echo '<pre>'; var_dump(${1}); echo '</pre>'; die(${0:});
+endsnippet
+
+snippet vd "A var_dump()." w
+var_dump(${0});
+endsnippet
+
+snippet vdd "A var_dump() with die()." w
+var_dump(${1}); die(${0:});
+endsnippet
+
+snippet http_redirect "An HTTP redirect." b
+header ("HTTP/1.1 301 Moved Permanently");
+header ("Location: $1"${2: . $url});
+exit();
+endsnippet
+
+snippet rett "A return true statement." b
+return true;
+endsnippet
+
+snippet retf "A return false statement." b
+return false;
+endsnippet
+
+snippet iss "An isset() statement."
+isset($1{VISUAL})
+endsnippet
+
+# PHPUnit snippets.
+
+snippet asserte "An assertEquals() statement." b
+$this->assertEquals(${1:expected}, ${2:actual});
+endsnippet
+
+snippet aassertne "An assertNotEquals() statement." b
+$this->assertNotEquals(${1:expected}, ${2:actual});
+endsnippet
+
+snippet assertf "An assertFalse() statement." b
+$this->assertFalse(${1:Something});
+endsnippet
+
+snippet assertt "An assertTrue() statement." b
+$this->assertTrue(${1:Something});
+endsnippet
+
+snippet assertcontains "An assertContains() statement." b
+$this->assertContains(${1:Search Value}, ${2:Array or Iterator});
+endsnippet
+
+snippet assertarrayhaskey "An assertArrayHasKey() statement." b
+$this->assertArrayHasKey(${1:key}, ${2:array});
+endsnippet
+
+snippet assertarraynothaskey "An assertArrayNotHasKey() statement." b
+this->assertArrayNotHasKey(${1:value}, ${2:array});
+endsnippet
+
+snippet assertclasshasattribute "An assertClassHasAttribute() statement." b
+$this->assertClassHasAttribute('${1:Attribute Name}', '${2:ClassName}');
+endsnippet
+
+snippet assertinstanceof "An assertInstanceOf() statement." b
+$this->assertInstanceOf(${1:expected}, ${2:actual});
+endsnippet
+
+snippet thrownew  "A throw new statement." b
+throw new ${1:Exception}("${2:Error Processing Request}");
+endsnippet
+
+snippet strr "str_replace() function." w
+str_replace(${1:search}, ${2:replace}, ${3:subject})$0
+endsnippet
+
+snippet inarray "in_array() function." w
+in_array(${1:needle}, ${2:haystack})$0
+endsnippet
