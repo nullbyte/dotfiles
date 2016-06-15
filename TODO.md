@@ -2,7 +2,7 @@
 
 - [ ] Add vim configuration files.
   - [x] Add vim colour scheme.
-  - [ ] Add vim snippets.
+  - [x] Add vim snippets.
 - [ ] Add zsh configuration files.
 - [ ] Add zsh theme.
 - [ ] Add .aliases file.
