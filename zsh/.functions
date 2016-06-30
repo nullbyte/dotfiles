@@ -1,8 +1,10 @@
+# This function is used to create a directory and immediately cd into it.
 function mkd () {
         mkdir $1
         cd $1
 }
 
+# This function is used to determine the current foremost Finder window.
 function ff { 
     osascript -e 'tell application "Finder"'\
         -e "if (${1-1} <= (count Finder windows)) then"\
@@ -13,4 +15,5 @@ function ff {
         -e 'end tell'; 
 };
 
+# This function is used to cd into the current foremost Finder window.
 function cdff { cd "`ff $@`"; };
