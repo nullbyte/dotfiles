@@ -1,21 +1,27 @@
+# Vim.
 alias vim='mvim -v'
 
+# Navigation aliases.
 alias ll='ls -l'
 alias la='ls -la'
 alias ..='cd ..'
 alias ...='cd ../..'
 
+# Vaprobash!
 alias vaprobash='curl -L https://raw.githubusercontent.com/fideloper/Vaprobash/master/Vagrantfile > Vagrantfile'
 
+# Homestead aliases.
 alias homestead='function __homestead() { (cd ~/Homestead && vagrant $*); unset -f __homestead; }; __homestead'
 alias vm='homestead ssh'
 alias oup='homestead up'
 alias odown='homestead suspend'
 
+# NPM aliases.
 alias nup='npm update && npm run build'
 alias nbuild='npm run build'
 alias nwatch='npm run cleanup && npm run watch'
 
+# Composer aliases.
 alias cself='composer self-update && composer clear-cache'
 alias cup='composer update'
 alias cinstall='composer install'
