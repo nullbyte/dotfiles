@@ -1,0 +1,23 @@
+alias vim='mvim -v'
+
+alias ll='ls -l'
+alias la='ls -la'
+alias ..='cd ..'
+alias ...='cd ../..'
+
+alias vaprobash='curl -L https://raw.githubusercontent.com/fideloper/Vaprobash/master/Vagrantfile > Vagrantfile'
+
+alias homestead='function __homestead() { (cd ~/Homestead && vagrant $*); unset -f __homestead; }; __homestead'
+alias vm='homestead ssh'
+alias oup='homestead up'
+alias odown='homestead suspend'
+
+alias nup='npm update && npm run build'
+alias nbuild='npm run build'
+alias nwatch='npm run cleanup && npm run watch'
+
+alias cself='composer self-update && composer clear-cache'
+alias cup='composer update'
+alias cinstall='composer install'
+alias cginstall='composer install'
+alias cdump='composer dumpautoload'
