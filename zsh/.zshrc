@@ -28,6 +28,8 @@ source $ZSH/oh-my-zsh.sh
 eval "$(rbenv init -)"
 export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
 
+. ~/.functions
+
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
     export EDITOR='vim'
